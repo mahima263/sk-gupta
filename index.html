@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prof. S.K. Gupta Faculty Chair | IIT Kanpur</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600;700&family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #B04b34;
+            --primary-dark: #8a3a28;
+            --primary-light: #f8f0ee;
+            --dark-color: #000000;
+            --light-color: #f8f9fa;
+            --gray-color: #5a5a5a;
+            --accent-color: #2c3e50;
+            --gold: #c9a84c;
+            --gold-light: #e8d5a0;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--gray-color);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        h1,h2,h3,h4,h5 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        /* ─── NAVIGATION ─── */
+        .navbar {
+            padding: 12px 0;
+            background-color: rgba(255,255,255,0.95) !important;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.4s ease;
+        }
+        .navbar-logo { height: 70px; width: auto; }
+        .navbar-nav .nav-link {
+            position: relative; padding: 8px 12px; margin: 0 3px;
+            font-weight: 500; font-size: 0.92rem; transition: all 0.3s ease;
+        }
+        .navbar-nav .nav-link.active { color: var(--primary-color) !important; font-weight: 600; }
+        .navbar-nav .nav-link::after {
+            content: ''; position: absolute; bottom: 0; left: 12px; right: 12px;
+            height: 3px; background-color: var(--primary-color); border-radius: 2px;
+            transform: scaleX(0); transition: transform 0.3s ease;
+        }
+        .navbar-nav .nav-link.active::after,
+        .navbar-nav .nav-link:hover::after { transform: scaleX(1); }
+        .nav-cta-btn {
+            background-color: var(--primary-color); color: white !important;
+            padding: 8px 22px !important; border-radius: 30px; font-weight: 600;
+            margin-left: 10px; border: 2px solid var(--primary-color); transition: all 0.3s ease;
+        }
+        .nav-cta-btn:hover,.nav-cta-btn.active {
+            background-color: white; color: var(--primary-color) !important;
+            transform: translateY(-2px); box-shadow: 0 5px 15px rgba(176,75,52,0.2);
+        }
+        .nav-cta-btn.active::after,.nav-cta-btn:hover::after { display: none !important; }
+
+        /* ─── HERO WITH PREMIUM TEXT EFFECTS ─── */
+        .hero-section {
+            background: url('SK Gupta_Web banner.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to right,
+                rgba(10,5,3,0.85) 0%,
+                rgba(10,5,3,0.65) 35%,
+                rgba(10,5,3,0.25) 60%,
+                transparent 80%
+            );
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 700px;
+            padding-left: 15px;
+        }
+
+        .hero-eyebrow {
+            font-family: 'Cinzel', serif;
+            font-size: 0.74rem;
+            letter-spacing: 0.45em;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 22px;
+            overflow: hidden;
+        }
+
+        .hero-eyebrow .char {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(100%);
+            animation: charReveal 0.5s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+
+        @keyframes charReveal {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero-line {
+            width: 80px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+            margin-bottom: 30px;
+            opacity: 0;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: heroLineGrow 1s cubic-bezier(0.77,0,0.175,1) forwards 0.8s;
+            box-shadow: 0 0 12px rgba(201,168,76,0.4);
+        }
+
+        @keyframes heroLineGrow {
+            to { opacity: 1; transform: scaleX(1); }
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.6rem, 5.8vw, 4.8rem);
+            font-weight: 700;
+            color: white;
+            line-height: 1.12;
+            margin-bottom: 28px;
+            text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+        }
+
+        .hero-title .word-wrap {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: bottom;
+        }
+
+        .hero-title .word {
+            display: inline-block;
+            transform: translateY(110%);
+            animation: wordSlideUp 0.9s cubic-bezier(0.23,1,0.32,1) forwards;
+        }
+
+        @keyframes wordSlideUp {
+            to { transform: translateY(0); }
+        }
+
+        .hero-title em {
+            font-style: italic;
+            font-weight: 400;
+            background: linear-gradient(135deg, var(--gold-light), var(--gold), #fff5d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title em .word {
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.15rem;
+            color: rgba(255,255,255,0.8);
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 500px;
+            letter-spacing: 0.02em;
+            opacity: 0;
+            transform: translateY(24px);
+            animation: subtitleReveal 1s cubic-bezier(0.23,1,0.32,1) forwards 1.6s;
+        }
+
+        @keyframes subtitleReveal {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+                letter-spacing: 0.06em;
+            }
+        }
+
+        .hero-accent-line {
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, var(--gold), transparent);
+            margin-top: 32px;
+            animation: accentGrow 1.2s ease forwards 2s;
+        }
+
+        @keyframes accentGrow {
+            to { width: 120px; }
+        }
+
+        .hero-scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            opacity: 0;
+            animation: heroFadeUp 0.8s ease forwards 2.2s;
+        }
+
+        .hero-scroll-indicator span {
+            font-family: 'Cinzel', serif;
+            font-size: 0.6rem;
+            letter-spacing: 0.3em;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+        }
+
+        .scroll-line-anim {
+            width: 1px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes heroFadeUp {
+            to { opacity: 1; transform: translateY(0) translateX(-50%); }
+        }
+        @keyframes scrollPulse {
+            0%,100% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.3; transform: scaleY(0.6); }
+        }
+
+        /* ─── MARQUEE ─── */
+        .marquee-strip {
+            background: var(--primary-color); overflow: hidden;
+            padding: 14px 0; white-space: nowrap; position: relative;
+        }
+        .marquee-track {
+            display: inline-flex; gap: 50px;
+            animation: marqueeScroll 30s linear infinite;
+        }
+        .marquee-track span {
+            font-family: 'Playfair Display', serif; font-size: 0.78rem;
+            letter-spacing: 0.28em; color: rgba(255,255,255,0.9);
+            text-transform: uppercase; flex-shrink: 0;
+        }
+        .marquee-track .dot { color: var(--gold); font-size: 0.9rem; }
+        @keyframes marqueeScroll { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+        /* ─── SECTION COMMON ─── */
+        .section-title {
+            position: relative; padding-bottom: 20px; margin-bottom: 3rem;
+            font-size: 2.8rem; color: var(--primary-color); text-align: center;
+        }
+        .section-title:after {
+            content: ''; position: absolute; left: 50%; bottom: 0;
+            transform: translateX(-50%); width: 120px; height: 4px;
+            background-color: var(--primary-color); border-radius: 2px;
+            transition: width 0.5s ease;
+        }
+        .section-title:hover:after { width: 180px; }
+
+        /* ─── NURTURING ─── */
+        .nurturing-section {
+            position: relative; overflow: hidden;
+            background: linear-gradient(180deg, #ffffff 0%, #faf7f2 100%);
+        }
+        .nurturing-section::before {
+            content: ''; position: absolute; top: -120px; right: -120px;
+            width: 350px; height: 350px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(176,75,52,0.04) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .nurturing-section::after {
+            content: ''; position: absolute; bottom: -80px; left: -80px;
+            width: 250px; height: 250px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(201,168,76,0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .nurturing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .nurturing-img-wrap {
+            position: relative; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.1);
+        }
+        .nurturing-img-wrap img {
+            width: 100%; height: 520px; object-fit: cover; display: block;
+            transition: transform 1.2s cubic-bezier(0.23,1,0.32,1);
+        }
+        .nurturing-img-wrap:hover img { transform: scale(1.06); }
+        .nurturing-img-accent {
+            position: absolute; top: -16px; right: -16px;
+            width: 120px; height: 120px; border: 2px solid var(--gold);
+            border-radius: 8px; z-index: -1; opacity: 0.5;
+        }
+        .nurturing-img-overlay {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 40px 28px 24px;
+            background: linear-gradient(to top, rgba(74,30,20,0.88), transparent);
+        }
+        .nurturing-img-caption {
+            font-family: 'Playfair Display', serif; font-size: 1.15rem;
+            color: var(--gold-light); font-style: italic; line-height: 1.4;
+        }
+        .nurturing-img-sub {
+            font-size: 0.72rem; color: rgba(255,255,255,0.6);
+            text-transform: uppercase; letter-spacing: 0.2em; margin-top: 6px;
+        }
+        .nurturing-content-wrap { position: relative; }
+        .nurturing-label {
+            display: inline-flex; align-items: center; gap: 10px;
+            font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 0.22em; color: var(--primary-color); margin-bottom: 18px;
+        }
+        .nurturing-label-line { width: 40px; height: 2px; background: var(--primary-color); }
+        .nurturing-content-wrap p {
+            font-size: 1.02rem; color: var(--gray-color); line-height: 1.85; margin-bottom: 22px;
+        }
+        .nurturing-highlight-bar {
+            margin-top: 60px; background: white; border-radius: 12px;
+            padding: 40px 48px; position: relative; overflow: hidden;
+            box-shadow: 0 15px 45px rgba(0,0,0,0.06);
+            border: 1px solid rgba(176,75,52,0.08);
+        }
+        .nurturing-highlight-bar::before {
+            content: ''; position: absolute; top: 0; left: 0;
+            width: 5px; height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--gold));
+            border-radius: 3px 0 0 3px;
+        }
+        .nurturing-highlight-bar::after {
+            content: '\f10d'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+            position: absolute; top: 16px; right: 28px; font-size: 3rem;
+            color: rgba(176,75,52,0.06);
+        }
+        .nurturing-highlight-bar p {
+            font-family: 'Playfair Display', serif; font-size: 1.15rem;
+            color: var(--dark-color); line-height: 1.75; text-align: center;
+            font-style: italic; margin: 0; position: relative; z-index: 1;
+        }
+
+        /* ─── PROFESSOR (v1) ─── */
+        .professor-section { background-color: #f9f9f9; position: relative; overflow: hidden; }
+        .professor-card {
+            border-radius: 20px; overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1); transition: transform 0.5s ease;
+        }
+        .professor-card:hover { transform: translateY(-10px); }
+        .professor-img {
+            height: 100%; min-height: 400px; background: url('SK gupta.jpeg') center/cover;
+            position: relative; transition: all 1.2s cubic-bezier(0.175,0.885,0.32,1.275); overflow: hidden;
+        }
+        .professor-img:hover { transform: scale(1.08); }
+        .professor-img:after {
+            content: ''; position: absolute; inset: 0;
+            background: linear-gradient(to right, rgba(176,75,52,0.1), transparent); z-index: 1;
+        }
+        .professor-badge {
+            background-color: var(--primary-color); color: white; padding: 8px 20px;
+            border-radius: 30px; font-size: 0.9rem; font-weight: 600;
+            display: inline-block; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(176,75,52,0.3);
+        }
+        .professor-link {
+            display: inline-block; margin-top: 20px; color: var(--primary-color);
+            font-weight: 600; text-decoration: none; transition: all 0.3s ease;
+            border-bottom: 2px solid transparent;
+        }
+        .professor-link:hover { color: var(--primary-dark); border-bottom: 2px solid var(--primary-color); padding-bottom: 2px; }
+        .professor-link i { margin-left: 5px; transition: transform 0.3s ease; }
+        .professor-link:hover i { transform: translateX(5px); }
+
+        /* ─── ABOUT CHAIR ─── */
+        .about-highlight {
+            background-color: var(--primary-light);
+            border-left: 5px solid var(--primary-color); border-right: 5px solid var(--primary-color);
+            padding: 30px; border-radius: 10px; margin: 40px 0; position: relative; overflow: hidden;
+        }
+
+        /* ─── OBJECTIVES ─── */
+        .objectives-section { position: relative; overflow: hidden; background: linear-gradient(135deg, #f9f9f9 0%, #ffffff 100%); }
+        .objectives-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; max-width: 1300px; margin: 0 auto; }
+        .objective-card {
+            width: 230px; height: 320px; position: relative; border-radius: 16px;
+            overflow: hidden; cursor: pointer; box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: transform 0.5s cubic-bezier(0.23,1,0.32,1), box-shadow 0.5s ease;
+        }
+        .objective-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(176,75,52,0.2); }
+        .objective-front {
+            position: absolute; inset: 0;
+            background: linear-gradient(145deg, #ffffff 0%, var(--primary-light) 100%);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 30px 20px; z-index: 2;
+        }
+        .objective-front .obj-icon {
+            width: 80px; height: 80px; border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2rem; color: white; margin-bottom: 22px;
+            transition: transform 0.5s ease, box-shadow 0.5s ease;
+            box-shadow: 0 8px 25px rgba(176,75,52,0.3);
+        }
+        .objective-card:hover .objective-front .obj-icon { transform: scale(1.1) rotate(5deg); box-shadow: 0 12px 35px rgba(176,75,52,0.4); }
+        .objective-front .obj-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: var(--dark-color); text-align: center; margin-bottom: 0; line-height: 1.3; }
+        .objective-front .obj-hint { margin-top: 16px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--primary-color); opacity: 0; transform: translateY(8px); transition: all 0.4s ease 0.1s; }
+        .objective-card:hover .objective-front .obj-hint { opacity: 1; transform: translateY(0); }
+        .objective-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(160deg, var(--primary-color) 0%, var(--primary-dark) 60%, #4a1e14 100%);
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            padding: 30px 24px; z-index: 3; transform: translateY(100%);
+            transition: transform 0.55s cubic-bezier(0.23,1,0.32,1);
+        }
+        .objective-card:hover .objective-overlay { transform: translateY(0); }
+        .objective-overlay .overlay-icon { width: 52px; height: 52px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: white; margin-bottom: 20px; opacity: 0; transform: translateY(15px); transition: all 0.4s ease 0.15s; }
+        .objective-card:hover .objective-overlay .overlay-icon { opacity: 1; transform: translateY(0); }
+        .objective-overlay .overlay-title { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 600; color: white; text-align: center; margin-bottom: 14px; opacity: 0; transform: translateY(15px); transition: all 0.4s ease 0.22s; }
+        .objective-card:hover .objective-overlay .overlay-title { opacity: 1; transform: translateY(0); }
+        .objective-overlay .overlay-line { width: 40px; height: 2px; background: rgba(255,255,255,0.4); margin-bottom: 16px; opacity: 0; transform: scaleX(0); transition: all 0.4s ease 0.28s; }
+        .objective-card:hover .objective-overlay .overlay-line { opacity: 1; transform: scaleX(1); }
+        .objective-overlay .overlay-text { font-size: 0.9rem; color: rgba(255,255,255,0.88); text-align: center; line-height: 1.65; opacity: 0; transform: translateY(15px); transition: all 0.4s ease 0.32s; }
+        .objective-card:hover .objective-overlay .overlay-text { opacity: 1; transform: translateY(0); }
+        @media (min-width: 1200px) { .objectives-container { flex-wrap: nowrap !important; justify-content: space-between; } }
+
+        /* ─── SELECTION ─── */
+        .selection-section { background-color: #ffffff; position: relative; }
+        .selection-card { background: white; border-radius: 16px; padding: 40px 30px; height: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.08); border: 2px solid var(--primary-light); position: relative; overflow: hidden; text-align: center; transition: transform 0.4s ease, box-shadow 0.4s ease; }
+        .selection-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(176,75,52,0.12); }
+        .selection-card:before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: var(--primary-color); transform: scaleX(0); transition: transform 0.4s ease; }
+        .selection-card:hover:before { transform: scaleX(1); }
+        .selection-icon { font-size: 3.5rem; color: var(--primary-color); margin-bottom: 1.5rem; }
+        .selection-title { color: var(--dark-color); font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 1rem; }
+
+        /* ─── BUILDING (4-border) ─── */
+        .building-section { background-color: #f5f5f5; position: relative; }
+        .building-card { background: white; border-radius: 8px; padding: 40px 30px; height: 100%; position: relative; transition: all 0.5s ease; z-index: 1; overflow: hidden; }
+        .building-card:before,.building-card:after,.building-card .inner-border-top:before,.building-card .inner-border-bottom:before { content: ''; position: absolute; background-color: var(--primary-color); transition: all 0.5s ease; z-index: 2; }
+        .building-card:before { top: 0; left: 0; width: 0; height: 3px; }
+        .building-card:after { top: 0; right: 0; width: 3px; height: 0; }
+        .building-card .inner-border-bottom:before { bottom: 0; right: 0; width: 0; height: 3px; }
+        .building-card .inner-border-top:before { bottom: 0; left: 0; width: 3px; height: 0; }
+        .building-card:hover:before { width: 100%; }
+        .building-card:hover:after { height: 100%; }
+        .building-card:hover .inner-border-bottom:before { width: 100%; }
+        .building-card:hover .inner-border-top:before { height: 100%; }
+        .building-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 1.8rem; position: relative; z-index: 3; transition: all 0.5s ease; }
+        .building-card:hover .building-icon { transform: translateY(-10px); }
+        .building-title { color: var(--dark-color); font-family: 'Playfair Display', serif; font-size: 1.4rem; margin-bottom: 1rem; position: relative; z-index: 3; }
+        .building-card:hover .building-title { color: var(--primary-color); }
+        .building-content { position: relative; z-index: 3; }
+
+        /* ══════════════════════════════════════════════
+           ─── LEGACY SECTION — DARK PREMIUM THEME ───
+           ══════════════════════════════════════════════ */
+        .legacy-section {
+            background: linear-gradient(160deg, #0d0a09 0%, #1a120e 30%, #1f1410 60%, #150e0b 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Ambient glow overlays */
+        .legacy-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse at 20% 50%, rgba(176,75,52,0.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.06) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 90%, rgba(176,75,52,0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Top gold hairline */
+        .legacy-section::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+            z-index: 1;
+        }
+
+        /* Override section title for dark bg */
+        .legacy-section .section-title {
+            color: var(--gold-light);
+        }
+        .legacy-section .section-title:after {
+            background-color: var(--gold);
+        }
+
+        /* ── PERMANENT 1986 WATERMARK — always visible ── */
+        .legacy-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(120px, 20vw, 320px);
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 0;
+            user-select: none;
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(201,168,76,0.1);
+            background: linear-gradient(
+                180deg,
+                rgba(201,168,76,0.07) 0%,
+                rgba(176,75,52,0.09) 50%,
+                rgba(201,168,76,0.05) 100%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        /* Secondary deeper watermark for parallax depth */
+        .legacy-watermark-bg {
+            position: absolute;
+            top: 48%;
+            left: 52%;
+            transform: translate(-50%, -50%);
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(140px, 24vw, 380px);
+            font-weight: 800;
+            color: rgba(176,75,52,0.03);
+            letter-spacing: 0.12em;
+            pointer-events: none;
+            white-space: nowrap;
+            z-index: 0;
+            user-select: none;
+        }
+
+        /* Bottom gold hairline */
+        .legacy-bottom-line {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent);
+            z-index: 1;
+        }
+
+        /* ── Glass-morphism card ── */
+        .legacy-main-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(201,168,76,0.18);
+            border-radius: 16px;
+            max-width: 1000px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.3),
+                0 0 0 1px rgba(201,168,76,0.06),
+                inset 0 1px 0 rgba(255,255,255,0.04);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .legacy-main-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--gold), var(--primary-color));
+        }
+
+        .legacy-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            padding: 40px 40px 0;
+        }
+        .legacy-emblem {
+            width: 78px; height: 78px;
+            border-radius: 50%;
+            border: 2px solid rgba(201,168,76,0.4);
+            display: flex; align-items: center; justify-content: center;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(176,75,52,0.08));
+            transition: all 0.4s ease;
+        }
+        .legacy-emblem:hover {
+            transform: rotate(10deg) scale(1.05);
+            box-shadow: 0 8px 25px rgba(201,168,76,0.25);
+            border-color: rgba(201,168,76,0.6);
+        }
+        .legacy-emblem i { font-size: 1.8rem; color: var(--gold); }
+
+        .legacy-header-text h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.9rem;
+            color: var(--gold-light);
+            margin-bottom: 4px;
+        }
+        .legacy-header-text .legacy-sub {
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: rgba(201,168,76,0.6);
+            font-weight: 500;
+        }
+        .legacy-divider {
+            width: 70px; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 28px auto;
+        }
+        .legacy-body { padding: 0 50px 20px; }
+        .legacy-body p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            line-height: 1.85;
+            margin-bottom: 18px;
+        }
+        .legacy-body p:last-child { margin-bottom: 0; }
+
+        .legacy-stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin: 0;
+            border-top: 1px solid rgba(201,168,76,0.12);
+        }
+        .legacy-stat {
+            text-align: center;
+            flex: 1;
+            padding: 30px 20px;
+            position: relative;
+            transition: background 0.3s ease;
+        }
+        .legacy-stat:hover {
+            background: rgba(201,168,76,0.04);
+        }
+        .legacy-stat:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            right: 0; top: 20%; height: 60%; width: 1px;
+            background: rgba(201,168,76,0.12);
+        }
+        .legacy-stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: var(--gold);
+            line-height: 1;
+            display: block;
+        }
+        .legacy-stat-label {
+            font-size: 0.76rem;
+            color: rgba(255,255,255,0.45);
+            letter-spacing: 0.08em;
+            margin-top: 6px;
+            display: block;
+        }
+
+        /* ─── CTA ─── */
+        .parallax-cta { background: linear-gradient(rgba(14,5,4,0.72), rgba(138,58,40,0.65)), url('library.webp'); background-size: cover; background-position: center; background-attachment: fixed; color: white; padding: 120px 0 100px; position: relative; overflow: hidden; }
+        .cta-title { font-size: 3.2rem; margin-bottom: 1.2rem; color: white; text-shadow: 1px 1px 5px rgba(0,0,0,0.3); }
+        .cta-subtitle { font-size: 1.15rem; margin-bottom: 2.5rem; opacity: 0.85; max-width: 620px; margin-left: auto; margin-right: auto; }
+        .cta-btn { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--dark-color); padding: 18px 50px; font-size: 1.1rem; font-weight: 700; border-radius: 4px; border: none; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; overflow: hidden; z-index: 1; margin-bottom: 50px; text-decoration: none; display: inline-block; letter-spacing: 0.06em; }
+        .cta-btn:before { content: ''; position: absolute; top: 0; left: 0; width: 0; height: 100%; background: var(--primary-color); transition: width 0.4s ease; z-index: -1; }
+        .cta-btn:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(0,0,0,0.35); color: white; }
+        .cta-btn:hover:before { width: 100%; }
+        .cta-contact-card { max-width: 950px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; border-radius: 12px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.25); }
+        .contact-left { background: linear-gradient(160deg, var(--primary-color) 0%, var(--primary-dark) 100%); padding: 50px 40px; display: flex; flex-direction: column; justify-content: center; }
+        .contact-left h4 { font-family: 'Playfair Display', serif; font-size: 2rem; color: white; margin-bottom: 10px; }
+        .contact-left .contact-tagline { font-size: 0.92rem; color: rgba(255,255,255,0.7); margin-bottom: 30px; }
+        .contact-left .contact-decoration { width: 50px; height: 2px; background: rgba(255,255,255,0.3); margin-bottom: 30px; }
+        .contact-left .inst-name { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: rgba(255,255,255,0.55); letter-spacing: 0.04em; }
+        .contact-right { background: rgba(255,255,255,0.97); backdrop-filter: blur(12px); padding: 50px 40px; }
+        .contact-row { display: flex; gap: 18px; align-items: flex-start; margin-bottom: 28px; padding-bottom: 28px; border-bottom: 1px solid rgba(0,0,0,0.06); transition: all 0.3s ease; }
+        .contact-row:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .contact-row:hover { transform: translateX(6px); }
+        .contact-row-icon { width: 48px; height: 48px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--primary-color); font-size: 1.1rem; flex-shrink: 0; transition: all 0.3s ease; }
+        .contact-row:hover .contact-row-icon { background: var(--primary-color); color: white; border-radius: 12px; }
+        .contact-row-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gray-color); margin-bottom: 4px; }
+        .contact-row-value { font-size: 1rem; color: var(--dark-color); font-weight: 600; }
+
+        /* ═══ RESPONSIVE ═══ */
+        @media (min-width: 1400px) { .section-title { font-size: 3rem; } .objective-card { width: 240px; height: 330px; } }
+        @media (max-width: 1199px) {
+            .section-title { font-size: 2.5rem; }
+            .objective-card { width: 210px; height: 300px; }
+            .objective-front .obj-icon { width: 70px; height: 70px; font-size: 1.7rem; }
+            .objective-front .obj-title { font-size: 1.15rem; }
+            .navbar-nav .nav-link { padding: 8px 10px; font-size: 0.85rem; }
+            .nav-cta-btn { padding: 7px 18px !important; font-size: 0.85rem; }
+            .cta-contact-card { max-width: 850px; }
+            .legacy-body { padding: 0 40px 20px; }
+            .hero-title { font-size: clamp(2.2rem, 4.8vw, 3.8rem); }
+            .legacy-watermark { font-size: clamp(100px, 18vw, 280px); }
+            .legacy-watermark-bg { font-size: clamp(120px, 22vw, 340px); }
+        }
+        @media (max-width: 991px) {
+            .section-title { font-size: 2.3rem; }
+            .nurturing-grid { grid-template-columns: 1fr; gap: 40px; }
+            .nurturing-img-wrap img { height: 400px; }
+            .nurturing-img-accent { display: none; }
+            .cta-contact-card { grid-template-columns: 1fr; }
+            .objectives-container { gap: 20px; }
+            .objective-card { width: 200px; height: 290px; }
+            .objective-front .obj-icon { width: 65px; height: 65px; font-size: 1.5rem; }
+            .objective-front .obj-title { font-size: 1.1rem; }
+            .legacy-stats-row { gap: 0; }
+            .legacy-header { gap: 18px; }
+            .legacy-header-text h3 { font-size: 1.6rem; }
+            .building-card { padding: 30px 20px; }
+            .building-icon { font-size: 2.5rem; margin-bottom: 1.2rem; }
+            .building-title { font-size: 1.2rem; }
+            .selection-card { padding: 30px 24px; }
+            .selection-icon { font-size: 2.8rem; margin-bottom: 1rem; }
+            .cta-title { font-size: 2.8rem; }
+            .hero-section { height: 75vh; min-height: 500px; }
+            .hero-title { font-size: clamp(2rem, 4.2vw, 3.2rem); }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-accent-line { margin-top: 24px; }
+            .marquee-track span { font-size: 0.72rem; letter-spacing: 0.2em; }
+            .legacy-watermark { font-size: clamp(90px, 16vw, 240px); }
+            .legacy-watermark-bg { font-size: clamp(110px, 20vw, 280px); }
+        }
+        @media (max-width: 767px) {
+            .hero-section { background-image: url('SK_Gupta_Web_banner.jpg'); background-attachment: scroll; height: 80vh; min-height: 480px; }
+            .hero-overlay { background: linear-gradient(to top, rgba(10,5,3,0.85) 0%, rgba(10,5,3,0.5) 50%, rgba(10,5,3,0.15) 100%); }
+            .hero-content { max-width: 100%; padding-left: 0; text-align: center; }
+            .hero-line { margin-left: auto; margin-right: auto; }
+            .hero-subtitle { max-width: 100%; }
+            .hero-accent-line { margin-left: auto; margin-right: auto; }
+            .hero-eyebrow .char { font-size: 0.6rem; }
+            .hero-eyebrow { font-size: 0.62rem; letter-spacing: 0.3em; }
+            .hero-scroll-indicator { display: none; }
+            .section-title { font-size: 2rem; margin-bottom: 2.5rem; }
+            .section-title:after { width: 80px; }
+            .cta-title { font-size: 2.2rem; }
+            .cta-subtitle { font-size: 1rem; }
+            .nurturing-grid { gap: 30px; }
+            .nurturing-img-wrap img { height: 320px; }
+            .nurturing-highlight-bar { padding: 28px 24px; margin-top: 40px; }
+            .nurturing-highlight-bar p { font-size: 1rem; }
+            .nurturing-content-wrap p { font-size: 0.95rem; }
+            .nurturing-img-caption { font-size: 1rem; }
+            .navbar-logo { height: 55px; }
+            .navbar { padding: 10px 0; }
+            .navbar-nav .nav-cta-btn { margin-left: 0; margin-top: 10px; display: inline-block; width: auto; }
+            .objectives-container { gap: 16px; }
+            .objective-card { width: 160px; height: 260px; }
+            .objective-front .obj-icon { width: 55px; height: 55px; font-size: 1.3rem; margin-bottom: 14px; }
+            .objective-front .obj-title { font-size: 1rem; }
+            .objective-front .obj-hint { font-size: 0.65rem; margin-top: 10px; }
+            .objective-overlay { padding: 20px 16px; }
+            .objective-overlay .overlay-icon { width: 40px; height: 40px; font-size: 1rem; margin-bottom: 12px; }
+            .objective-overlay .overlay-title { font-size: 1rem; margin-bottom: 10px; }
+            .objective-overlay .overlay-text { font-size: 0.8rem; }
+            .legacy-body { padding: 0 24px 16px; }
+            .legacy-body p { font-size: 0.95rem; }
+            .legacy-header { padding: 28px 24px 0; flex-direction: column; gap: 12px; text-align: center; }
+            .legacy-header-text h3 { font-size: 1.5rem; }
+            .legacy-header-text .legacy-sub { font-size: 0.7rem; letter-spacing: 0.15em; }
+            .legacy-emblem { width: 64px; height: 64px; }
+            .legacy-emblem i { font-size: 1.5rem; }
+            .legacy-stats-row { flex-direction: column; }
+            .legacy-stat { padding: 20px 16px; }
+            .legacy-stat:not(:last-child)::after { display: none; }
+            .legacy-stat:not(:last-child) { border-bottom: 1px solid rgba(201,168,76,0.12); }
+            .legacy-stat-num { font-size: 2rem; }
+            .contact-left { padding: 32px 24px; }
+            .contact-left h4 { font-size: 1.6rem; }
+            .contact-right { padding: 32px 24px; }
+            .contact-row-icon { width: 42px; height: 42px; font-size: 1rem; }
+            .cta-btn { padding: 14px 36px; font-size: 1rem; }
+            .parallax-cta { padding: 80px 0 70px; background-attachment: scroll; }
+            .professor-card { border-radius: 14px; }
+            .professor-badge { font-size: 0.8rem; padding: 6px 16px; }
+            .professor-img { min-height: 300px; }
+            .building-card { padding: 28px 20px; }
+            .building-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+            .building-title { font-size: 1.15rem; }
+            .selection-card { padding: 28px 20px; }
+            .selection-icon { font-size: 2.5rem; }
+            .selection-title { font-size: 1.3rem; }
+            .marquee-strip { padding: 10px 0; }
+            .marquee-track span { font-size: 0.68rem; letter-spacing: 0.18em; }
+            .marquee-track { gap: 35px; }
+            .legacy-watermark { font-size: clamp(80px, 22vw, 180px); -webkit-text-stroke: 1px rgba(201,168,76,0.08); }
+            .legacy-watermark-bg { font-size: clamp(100px, 26vw, 220px); }
+        }
+        @media (max-width: 575px) {
+            .hero-section { height: 75vh; min-height: 420px; }
+            .hero-title { font-size: 1.9rem; margin-bottom: 18px; }
+            .hero-subtitle { font-size: 0.92rem; }
+            .hero-eyebrow .char { font-size: 0.55rem; }
+            .hero-eyebrow { font-size: 0.58rem; letter-spacing: 0.25em; margin-bottom: 14px; }
+            .hero-line { width: 50px; margin-bottom: 18px; }
+            .hero-accent-line { margin-top: 20px; }
+            .section-title { font-size: 1.7rem; margin-bottom: 2rem; }
+            .section-title:after { width: 60px; height: 3px; }
+            .nurturing-img-wrap img { height: 260px; }
+            .nurturing-content-wrap p { font-size: 0.88rem; margin-bottom: 16px; }
+            .nurturing-highlight-bar { padding: 22px 18px; margin-top: 30px; }
+            .nurturing-highlight-bar p { font-size: 0.9rem; }
+            .nurturing-highlight-bar::after { font-size: 2rem; top: 10px; right: 16px; }
+            .nurturing-label { font-size: 0.65rem; letter-spacing: 0.18em; }
+            .nurturing-label-line { width: 28px; }
+            .objectives-container { flex-direction: column; align-items: center; gap: 16px; }
+            .objective-card { width: 100%; max-width: 280px; height: 280px; }
+            .objective-front .obj-icon { width: 60px; height: 60px; font-size: 1.4rem; margin-bottom: 16px; }
+            .objective-front .obj-title { font-size: 1.15rem; }
+            .cta-title { font-size: 1.8rem; }
+            .cta-subtitle { font-size: 0.92rem; }
+            .cta-btn { padding: 12px 30px; font-size: 0.92rem; margin-bottom: 35px; }
+            .contact-left h4 { font-size: 1.4rem; }
+            .contact-left .contact-tagline { font-size: 0.82rem; margin-bottom: 20px; }
+            .contact-row { gap: 14px; margin-bottom: 20px; padding-bottom: 20px; }
+            .contact-row-value { font-size: 0.9rem; }
+            .legacy-main-card { border-radius: 12px; }
+            .legacy-body { padding: 0 18px 12px; }
+            .legacy-body p { font-size: 0.88rem; line-height: 1.7; }
+            .legacy-header { padding: 22px 18px 0; }
+            .legacy-header-text h3 { font-size: 1.3rem; }
+            .legacy-stat { padding: 16px 12px; }
+            .legacy-stat-num { font-size: 1.8rem; }
+            .legacy-stat-label { font-size: 0.7rem; }
+            .professor-img { min-height: 250px; }
+            .professor-badge { font-size: 0.75rem; }
+            .about-highlight { padding: 20px 16px; margin: 25px 0; }
+            .about-highlight .lead { font-size: 0.9rem; }
+            .building-card { padding: 24px 16px; }
+            .building-icon { font-size: 2rem; margin-bottom: 0.8rem; }
+            .building-title { font-size: 1.05rem; margin-bottom: 0.6rem; }
+            .selection-card { padding: 24px 16px; }
+            .selection-icon { font-size: 2.2rem; margin-bottom: 1rem; }
+            .selection-title { font-size: 1.2rem; }
+            .marquee-track span { font-size: 0.62rem; }
+            .marquee-track { gap: 28px; }
+            .legacy-watermark { font-size: clamp(70px, 24vw, 150px); -webkit-text-stroke: 1px rgba(201,168,76,0.07); }
+            .legacy-watermark-bg { font-size: clamp(90px, 28vw, 180px); }
+        }
+        @media (max-width: 380px) {
+            .hero-section { height: 65vh; }
+            .hero-title { font-size: 1.6rem; }
+            .navbar-logo { height: 45px; }
+            .section-title { font-size: 1.5rem; }
+            .objective-card { max-width: 260px; height: 270px; }
+            .cta-title { font-size: 1.6rem; }
+            .legacy-header-text h3 { font-size: 1.15rem; }
+            .legacy-watermark { font-size: 65px; }
+            .legacy-watermark-bg { font-size: 80px; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ═══════════ NAVIGATION ═══════════ -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><img src="CL_logo.png" alt="IIT Kanpur Logo" class="navbar-logo me-2"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#professor">Prof. Gupta</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#objectives">Objectives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#leadership">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link nav-cta-btn" href="#contribute">Contribute</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ═══════════ HERO WITH PREMIUM TEXT ═══════════ -->
+    <section class="hero-section" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-eyebrow" id="heroEyebrow">IIT Kanpur — Faculty Chair Initiative</div>
+                <div class="hero-line"></div>
+                <h1 class="hero-title">
+                    <span class="word-wrap"><span class="word" style="animation-delay:1s">S.K.</span></span>
+                    <span class="word-wrap"><span class="word" style="animation-delay:1.12s">Gupta</span></span><br>
+                    <em><span class="word-wrap"><span class="word" style="animation-delay:1.28s">Faculty</span></span>
+                    <span class="word-wrap"><span class="word" style="animation-delay:1.4s">Chair</span></span></em>
+                </h1>
+                <p class="hero-subtitle">Advancing Academic Leadership at IIT Kanpur</p>
+                <div class="hero-accent-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ NURTURING EXCELLENCE ═══════════ -->
+    <section class="nurturing-section py-5" id="about" data-aos="fade-up">
+        <div class="container py-4 py-lg-5">
+            <h2 class="section-title" data-aos="fade-up">Nurturing Excellence Through Faculty Leadership</h2>
+            <div class="nurturing-grid">
+                <div class="position-relative" data-aos="fade-right" data-aos-delay="200">
+                    <div class="nurturing-img-wrap">
+                        <img src="section2.jpeg" alt="IIT Kanpur Campus" onerror="this.style.background='linear-gradient(135deg,#B04b34,#4a1e14)';this.style.minHeight='520px';this.removeAttribute('src')">
+                        <div class="nurturing-img-overlay">
+                            <div class="nurturing-img-caption">Shaping the Future of Academic Excellence</div>
+                            <div class="nurturing-img-sub">Since 1959</div>
+                        </div>
+                    </div>
+                    <div class="nurturing-img-accent"></div>
+                </div>
+                <div class="nurturing-content-wrap" data-aos="fade-left" data-aos-delay="300">
+                    <div class="nurturing-label"><div class="nurturing-label-line"></div>About the Initiative</div>
+                    <p>For more than six decades, IIT Kanpur has stood at the forefront of education, research, and innovation shaped by the brilliance of its faculty and students. As part of its long-standing commitment to Faculty Development Initiatives, the Institute continually invests in supporting educators who define its academic strength and national impact.</p>
+                    <p>It is in this spirit, the Institute has established the Prof. S.K. Gupta Faculty Chair in tribute to Prof. Santosh K. Gupta, whose exemplary scholarship, mentorship, and service embody the highest ideals of academic leadership at IIT Kanpur. IIT Kanpur believes our faculty are visionaries who inspire students, advance the boundaries of knowledge, and strengthen India's research ecosystem.</p>
+                </div>
+            </div>
+            <div class="nurturing-highlight-bar" data-aos="fade-up" data-aos-delay="500">
+                <p>Prof. S.K. Gupta Faculty Chair stands as a distinguished recognition of academic excellence, created to support and empower senior faculty members who demonstrate leadership in teaching, research, and institutional contribution, reflecting the values and impact exemplified by Prof. Gupta.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ HONORING PROF. GUPTA ═══════════ -->
+    <section class="professor-section py-5" id="professor" data-aos="fade-up">
+        <div class="container py-4 py-lg-5">
+            <h2 class="section-title" data-aos="fade-up">Honoring Prof. Santosh K. Gupta</h2>
+            <div class="row professor-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-md-5 p-0"><div class="professor-img h-100"></div></div>
+                <div class="col-md-7 p-4 p-md-5">
+                    <div class="professor-badge">President's Gold Medalist 1968</div>
+                    <h3 class="mb-3" style="color: var(--dark-color);">A Distinguished Voice in Chemical Engineering</h3>
+                    <p>Prof. Santosh K. Gupta, President's Gold Medal from the IITK batch of 1968, is one of the most distinguished voices in Chemical Engineering in India and across the world. He re-joined IIT Kanpur as faculty in 1973, became a full Professor in 1980, and dedicated nearly four decades to advancing Polymer Reaction Engineering, Optimization, and Process Systems Engineering.</p>
+                    <p>His scholarly impact is immense. His books such as Optimization for Engineers, Numerical Methods for Engineers, and Mathematical Methods in Chemical and Environmental Engineering are widely used across universities and industries worldwide.</p>
+                    <p>Prof. Gupta's career is adorned with Fellowships at INAE, NASI, and IISc Academies, as well as the IIT Kanpur Institute Fellowship 2021. Yet his deepest legacy lies in his extraordinary commitment to mentorship, a quality that shaped generations of students.</p>
+                    <a href="https://www.iitk.ac.in/che/skg.htm" target="_blank" class="professor-link" data-aos="fade-up" data-aos-delay="300">View Full Profile <i class="fas fa-external-link-alt"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ ABOUT THE CHAIR ═══════════ -->
+    <section class="py-5" data-aos="fade-up">
+        <div class="container py-4 py-lg-5">
+            <div class="row"><div class="col-lg-10 mx-auto">
+                <h2 class="section-title" data-aos="fade-up">About the Faculty Chair</h2>
+                <p class="lead text-center" data-aos="fade-up" data-aos-delay="200">Prof. S.K. Gupta Faculty Chair is being instituted to recognize and support outstanding academic leadership in the field of Mechanical Engineering at IIT Kanpur. The Chair aims to attract, retain, and empower distinguished faculty members who demonstrate excellence in teaching, research, and institutional contribution.</p>
+                <div class="about-highlight" data-aos="fade-up" data-aos-delay="300">
+                    <p class="mb-0 text-center lead">By providing dedicated support, the Chair enables the incumbent to pursue high-impact research, mentor students, and contribute meaningfully to the academic and innovation ecosystem of the Institute.</p>
+                </div>
+            </div></div>
+        </div>
+    </section>
+
+    <!-- ═══════════ OBJECTIVES ═══════════ -->
+    <section class="objectives-section py-5" id="objectives" data-aos="fade-up">
+        <div class="container py-4 py-lg-5">
+            <h2 class="section-title" data-aos="fade-up">Objectives of the Chair</h2>
+            <div class="objectives-container">
+                <div class="objective-card" data-aos="fade-up" data-aos-delay="100"><div class="objective-front"><div class="obj-icon"><i class="fas fa-award"></i></div><h4 class="obj-title">Recognize Excellence</h4><span class="obj-hint">Hover to explore</span></div><div class="objective-overlay"><div class="overlay-icon"><i class="fas fa-award"></i></div><h4 class="overlay-title">Recognize Excellence</h4><div class="overlay-line"></div><p class="overlay-text">Honor and incentivize exceptional faculty members who have demonstrated sustained contributions to their field.</p></div></div>
+                <div class="objective-card" data-aos="fade-up" data-aos-delay="200"><div class="objective-front"><div class="obj-icon"><i class="fas fa-flask"></i></div><h4 class="obj-title">Enable Research Leadership</h4><span class="obj-hint">Hover to explore</span></div><div class="objective-overlay"><div class="overlay-icon"><i class="fas fa-flask"></i></div><h4 class="overlay-title">Enable Research Leadership</h4><div class="overlay-line"></div><p class="overlay-text">Provide flexible support to advance cutting-edge research, collaborations, and innovation.</p></div></div>
+                <div class="objective-card" data-aos="fade-up" data-aos-delay="300"><div class="objective-front"><div class="obj-icon"><i class="fas fa-chart-line"></i></div><h4 class="obj-title">Attract & Retain Talent</h4><span class="obj-hint">Hover to explore</span></div><div class="objective-overlay"><div class="overlay-icon"><i class="fas fa-chart-line"></i></div><h4 class="overlay-title">Attract & Retain Talent</h4><div class="overlay-line"></div><p class="overlay-text">Strengthen IIT Kanpur's ability to attract and retain top-tier faculty in a competitive global environment.</p></div></div>
+                <div class="objective-card" data-aos="fade-up" data-aos-delay="400"><div class="objective-front"><div class="obj-icon"><i class="fas fa-user-graduate"></i></div><h4 class="obj-title">Enhance Student Impact</h4><span class="obj-hint">Hover to explore</span></div><div class="objective-overlay"><div class="overlay-icon"><i class="fas fa-user-graduate"></i></div><h4 class="overlay-title">Enhance Student Impact</h4><div class="overlay-line"></div><p class="overlay-text">Enable deeper engagement with students through mentorship, advanced courses, and research guidance.</p></div></div>
+                <div class="objective-card" data-aos="fade-up" data-aos-delay="500"><div class="objective-front"><div class="obj-icon"><i class="fas fa-landmark"></i></div><h4 class="obj-title">Build Legacy</h4><span class="obj-hint">Hover to explore</span></div><div class="objective-overlay"><div class="overlay-icon"><i class="fas fa-landmark"></i></div><h4 class="overlay-title">Build Legacy</h4><div class="overlay-line"></div><p class="overlay-text">Create a lasting academic legacy that continues to benefit future generations of students and faculty.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ SELECTION ═══════════ -->
+    <section class="selection-section py-5" data-aos="fade-up">
+        <div class="container py-4 py-lg-5">
+            <h2 class="section-title" data-aos="fade-up">Selection and Appointment</h2>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100"><div class="selection-card"><div class="selection-icon"><i class="fas fa-university"></i></div><h4 class="selection-title">Institute Guidelines</h4><p>The appointment to the Chair is governed by the guidelines approved by the Institute.</p></div></div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250"><div class="selection-card"><div class="selection-icon"><i class="fas fa-users"></i></div><h4 class="selection-title">Committee Evaluation</h4><p>A selection committee evaluates candidates based on their academic contributions, leadership in teaching and research, and overall impact on the institution.</p></div></div>
+                <div class="col-lg-4 col-md-12" data-aos="fade-up" data-aos-delay="400"><div class="selection-card"><div class="selection-icon"><i class="fas fa-star"></i></div><h4 class="selection-title">Excellence & Vision</h4><p>The process ensures that the Chair is conferred upon faculty who exemplify excellence, integrity, and long-term vision in their field.</p></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ STRENGTHENING (4-border) ═══════════ -->
+    <section class="building-section py-5" id="leadership" data-aos="fade-up">
+        <div class="container py-4 py-lg-5">
+            <h2 class="section-title" data-aos="fade-up">Strengthening Academic Leadership</h2>
+            <div class="row mb-4 mb-lg-5"><div class="col-lg-10 mx-auto" data-aos="fade-up" data-aos-delay="200"><p class="text-center lead">The role of a Chair Professor extends beyond individual achievement. It represents leadership that shapes departments, inspires students, and advances the Institute's academic mission.</p></div></div>
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="100"><div class="building-card"><div class="inner-border-top"></div><div class="inner-border-bottom"></div><div class="building-icon text-center w-100"><i class="fas fa-microscope"></i></div><h5 class="building-title text-center">High-Impact Research</h5><div class="building-content"><p class="text-center">Enables sustained, high-impact research that contributes to national and global knowledge.</p></div></div></div>
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="250"><div class="building-card"><div class="inner-border-top"></div><div class="inner-border-bottom"></div><div class="building-icon text-center w-100"><i class="fas fa-chalkboard-teacher"></i></div><h5 class="building-title text-center">Mentorship & Teaching</h5><div class="building-content"><p class="text-center">Strengthens mentorship and teaching, fostering deeper engagement with students and young researchers.</p></div></div></div>
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="400"><div class="building-card"><div class="inner-border-top"></div><div class="inner-border-bottom"></div><div class="building-icon text-center w-100"><i class="fas fa-handshake"></i></div><h5 class="building-title text-center">Institutional Capacity</h5><div class="building-content"><p class="text-center">Builds institutional capacity by encouraging collaboration, innovation, and academic excellence.</p></div></div></div>
+                <div class="col-lg-3 col-md-6 col-sm-6" data-aos="fade-up" data-aos-delay="550"><div class="building-card"><div class="inner-border-top"></div><div class="inner-border-bottom"></div><div class="building-icon text-center w-100"><i class="fas fa-globe-asia"></i></div><h5 class="building-title text-center">Lasting Influence</h5><div class="building-content"><p class="text-center">Creates a lasting influence on the academic ecosystem of IIT Kanpur and beyond.</p></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ CLASS OF 1986 — DARK PREMIUM ═══════════ -->
+    <section class="legacy-section py-5" data-aos="fade-up">
+        <!-- Double-layered watermark for depth — always visible -->
+        <div class="legacy-watermark-bg">1986</div>
+        <div class="legacy-watermark">1986</div>
+        <div class="legacy-bottom-line"></div>
+
+        <div class="container py-4 py-lg-5">
+            <h2 class="section-title" data-aos="fade-up">Class of 1986 — A Legacy of Giving</h2>
+            <div class="legacy-main-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="legacy-header">
+                    <div class="legacy-emblem" data-aos="fade-down" data-aos-delay="300"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="legacy-header-text"><h3>Batch of 1986</h3><span class="legacy-sub">Indian Institute of Technology Kanpur</span></div>
+                </div>
+                <div class="legacy-divider" data-aos="fade-up" data-aos-delay="350"></div>
+                <div class="legacy-body">
+                    <p data-aos="fade-up" data-aos-delay="400">The establishment of the Prof. S.K. Gupta Faculty Chair is made possible through the generous support of the Class of 1986. As they celebrate their enduring connection with IIT Kanpur, the batch has come together to honour a distinguished academic legacy by investing in the future of education, research, and innovation at IIT Kanpur.</p>
+                    <p data-aos="fade-up" data-aos-delay="450">Their contribution reflects a deep sense of gratitude and commitment to giving back to their alma mater. This initiative reflects the batch's shared vision of excellence and their desire to create opportunities for generations to come.</p>
+                </div>
+                <div class="legacy-stats-row" data-aos="fade-up" data-aos-delay="500">
+                    <div class="legacy-stat"><span class="legacy-stat-num">1986</span><span class="legacy-stat-label">Graduating Class</span></div>
+                    <div class="legacy-stat"><span class="legacy-stat-num">40+</span><span class="legacy-stat-label">Years of Alumni Bond</span></div>
+                    <div class="legacy-stat"><span class="legacy-stat-num">∞</span><span class="legacy-stat-label">Impact on Generations</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ CTA ═══════════ -->
+    <section class="parallax-cta" id="contribute" data-aos="fade-up">
+        <div class="container text-center">
+            <h2 class="cta-title" data-aos="fade-up">Support the Faculty Chair</h2>
+            <p class="cta-subtitle" data-aos="fade-up" data-aos-delay="100">Support academic leadership that shapes the future of education and research at IIT Kanpur.</p>
+            <a href="#" class="cta-btn" data-aos="fade-up" data-aos-delay="200"><i class="fas fa-heart me-2"></i>CONTRIBUTE HERE</a>
+            <div class="cta-contact-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="contact-left">
+                    <h4>Get in Touch</h4>
+                    <p class="contact-tagline">We'd love to hear from you and discuss how you can contribute to this legacy.</p>
+                    <div class="contact-decoration"></div>
+                    <p class="inst-name">IIT Kanpur Development Foundation</p>
+                </div>
+                <div class="contact-right">
+                    <div class="contact-row"><div class="contact-row-icon"><i class="fas fa-phone"></i></div><div><div class="contact-row-label">Phone</div><div class="contact-row-value">+91 98108 98246</div></div></div>
+                    <div class="contact-row"><div class="contact-row-icon"><i class="fas fa-envelope"></i></div><div><div class="contact-row-label">Email</div><div class="contact-row-value">rajatsharma@iitkdf.org</div></div></div>
+                    <div class="contact-row"><div class="contact-row-icon"><i class="fas fa-map-marker-alt"></i></div><div><div class="contact-row-label">Address</div><div class="contact-row-value">IIT Kanpur, Kalyanpur, Kanpur 208016</div></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: false, offset: 80 });
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                const id = this.getAttribute('href');
+                if (id === '#') return;
+                const el = document.querySelector(id);
+                if (el) window.scrollTo({ top: el.offsetTop - 75, behavior: 'smooth' });
+            });
+        });
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            let current = '';
+            sections.forEach(s => { if (pageYOffset >= s.offsetTop - 150) current = s.getAttribute('id'); });
+            navLinks.forEach(l => { l.classList.remove('active'); if (l.getAttribute('href') === '#'+current) l.classList.add('active'); });
+            document.querySelector('.navbar').style.boxShadow = window.scrollY > 100 ? '0 5px 30px rgba(0,0,0,0.1)' : '0 5px 20px rgba(0,0,0,0.05)';
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const n = document.querySelectorAll('.navbar-nav .nav-link'); if(n.length) n[0].classList.add('active');
+
+            // Eyebrow letter-by-letter reveal
+            const eyebrow = document.getElementById('heroEyebrow');
+            if (eyebrow) {
+                const text = eyebrow.textContent;
+                eyebrow.innerHTML = '';
+                text.split('').forEach((ch, i) => {
+                    const span = document.createElement('span');
+                    span.className = 'char';
+                    span.textContent = ch === ' ' ? '\u00A0' : ch;
+                    span.style.animationDelay = (0.3 + i * 0.03) + 's';
+                    eyebrow.appendChild(span);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
